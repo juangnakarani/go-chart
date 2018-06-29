@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/wcharczuk/go-chart"
+	"github.com/juangnakarani/go-chart"
 )
 
 func drawChart(res http.ResponseWriter, req *http.Request) {
@@ -38,8 +38,8 @@ func drawChart(res http.ResponseWriter, req *http.Request) {
 		},
 	}
 
-	res.Header().Set("Content-Type", "image/png")
-	graph.Render(chart.PNG, res)
+	res.Header().Set("Content-Type", "image/svg+xml")
+	graph.Render(chart.SVG, res)
 }
 
 func drawCustomChart(res http.ResponseWriter, req *http.Request) {
@@ -83,5 +83,5 @@ func main() {
 		res.Write([]byte{})
 	})
 	http.HandleFunc("/custom", drawCustomChart)
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":9090", nil)
 }
