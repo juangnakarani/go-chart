@@ -2,6 +2,7 @@ package drawing
 
 import (
 	"fmt"
+	"log"
 	"strconv"
 )
 
@@ -121,6 +122,8 @@ func (c Color) AverageWith(other Color) Color {
 
 // String returns a css string representation of the color.
 func (c Color) String() string {
-	fa := float64(c.A) / float64(255)
-	return fmt.Sprintf("rgba(%v,%v,%v,%.1f)", c.R, c.G, c.B, fa)
+	// fa := float64(c.A) / float64(255)
+	// return fmt.Sprintf("rgba(%v,%v,%v,%.1f)", c.R, c.G, c.B, fa)
+	log.Println("nganu gaes...")
+	return fmt.Sprintf("rgb(%v,%v,%v)", c.R, c.G, c.B)
 }
