@@ -42,6 +42,8 @@ func drawChart(res http.ResponseWriter, req *http.Request) {
 			chart.ContinuousSeries{
 				XValues: []float64{1.0, 2.0, 3.0, 4.0, 5.0},
 				YValues: []float64{1.0, 2.0, 3.0, 4.0, 5.0},
+				// XValues: []float64{0},
+				// YValues: []float64{0},
 			},
 			chart.ContinuousSeries{
 				YAxis:   chart.YAxisSecondary,
@@ -57,5 +59,5 @@ func drawChart(res http.ResponseWriter, req *http.Request) {
 
 func main() {
 	http.HandleFunc("/", drawChart)
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":9090", nil)
 }

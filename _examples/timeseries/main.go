@@ -18,6 +18,11 @@ func drawChart(res http.ResponseWriter, req *http.Request) {
 				Show: true,
 			},
 		},
+		YAxis: chart.YAxis{
+			Style: chart.Style{
+				Show: true, //enables / displays the y-axis
+			},
+		},
 		Series: []chart.Series{
 			chart.TimeSeries{
 				XValues: []time.Time{
@@ -34,6 +39,22 @@ func drawChart(res http.ResponseWriter, req *http.Request) {
 					time.Now(),
 				},
 				YValues: []float64{1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0},
+			},
+			chart.TimeSeries{
+				XValues: []time.Time{
+					time.Now().AddDate(0, 0, -10),
+					time.Now().AddDate(0, 0, -9),
+					time.Now().AddDate(0, 0, -8),
+					time.Now().AddDate(0, 0, -7),
+					time.Now().AddDate(0, 0, -6),
+					time.Now().AddDate(0, 0, -5),
+					time.Now().AddDate(0, 0, -4),
+					time.Now().AddDate(0, 0, -3),
+					time.Now().AddDate(0, 0, -2),
+					time.Now().AddDate(0, 0, -1),
+					time.Now(),
+				},
+				YValues: []float64{11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 8.0, 7.0},
 			},
 		},
 	}
